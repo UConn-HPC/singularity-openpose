@@ -45,8 +45,17 @@ python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade numpy==1.18.5 protobuf opencv-python
 # Configure.
 cd /opt/openpose
-export TRAVIS_OS_NAME=linux WITH_CUDA=true WITH_PYTHON=true
-test -d build || bash scripts/travis/configure.sh
-# Build and test.
-bash scripts/travis/run_make.sh
-bash scripts/travis/run_tests.sh
+test -d build || {
+     mkdir -p build
+     cd build
+     cmake .. -DBUILD_PYTHON=On -DGPU_MODE=CUDA -DCUDA_ARCH=Manual -DCUDA_ARCH_BIN=52 -DUSE_CUDNN=On
+     cd -
+}
+# Build.
+cd build
+make -j $(nproc)
+# make -j $(nproc) test
+# ctest
+
+%environment
+export PATH=/opt/openpose/build/caffe/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
