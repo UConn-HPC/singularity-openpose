@@ -4,6 +4,5 @@
 sandbox/
 
 # Downloads
-downloads/*.deb
-downloads/*.pin
+kitware.gpg
 openpose/

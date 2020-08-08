@@ -13,9 +13,10 @@ url https://github.com/UConn-HPC/singularity-openpose
 # Prevent redownloading files.
 %files
 openpose /opt
+kitware.gpg /etc/apt/trusted.gpg.d
 
 %post
-python3 -c 'from urllib.request import urlopen; print(urlopen("https://apt.kitware.com/keys/kitware-archive-latest.asc").read().decode("utf-8"))' | gpg --dearmor - > /etc/apt/trusted.gpg.d/kitware.gpg
+# pybind11 needs cmake 3.7 or later but xenial's cmake is 3.5.
 echo 'deb https://apt.kitware.com/ubuntu/ xenial main' > /etc/apt/sources.list.d/cmake.list
 apt-get -y update
 # Install dependencies.
