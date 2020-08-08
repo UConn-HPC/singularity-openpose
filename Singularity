@@ -15,6 +15,8 @@ url https://github.com/UConn-HPC/singularity-openpose
 openpose /opt
 
 %post
+python3 -c 'from urllib.request import urlopen; print(urlopen("https://apt.kitware.com/keys/kitware-archive-latest.asc").read().decode("utf-8"))' | gpg --dearmor - > /etc/apt/trusted.gpg.d/kitware.gpg
+echo 'deb https://apt.kitware.com/ubuntu/ xenial main' > /etc/apt/sources.list.d/cmake.list
 apt-get -y update
 # Install dependencies.
 build="
