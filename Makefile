@@ -12,6 +12,9 @@ endif
 $(TARGET) : $(SOURCE) downloads openpose
 	$(TIME) sudo $(SINGULARITY) build $(BUILD_OPTS) $@ $< | tee $(BUILD_LOG)
 
+openpose.simg : $(SOURCE) downloads openpose
+	$(TIME) sudo $(SINGULARITY) build $@ $< | tee $(BUILD_LOG)
+
 openpose :
 	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose
 	git -C $@ submodule update --init --recursive --remote
