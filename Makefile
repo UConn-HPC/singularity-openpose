@@ -2,7 +2,7 @@ SINGULARITY = /opt/singularity-3.6/bin/singularity
 TIME = command time -v
 SHELL = /bin/bash
 SOURCE = Singularity
-TARGET = openpose-cuda
+TARGET = sandbox
 BUILD_LOG = build.log
 BUILD_OPTS = --sandbox
 ifeq ($(TARGET),$(wildcard $(TARGET)))

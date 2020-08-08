@@ -1,7 +1,7 @@
 # Build artifacts
 *.log
 *.simg
-openpose-cuda/
+sandbox/
 
 # Downloads
 downloads/*.deb
