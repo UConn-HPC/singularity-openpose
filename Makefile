@@ -15,7 +15,3 @@ $(TARGET) : $(SOURCE) downloads openpose
 openpose :
 	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose
 	git -C $@ submodule update --init --recursive --remote
-
-.PHONY : downloads
-downloads :
-	$(MAKE) -C $@
