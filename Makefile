@@ -19,5 +19,5 @@ kitware.gpg :
 	wget -O - https://apt.kitware.com/keys/kitware-archive-latest.asc 2>/dev/null | gpg --dearmor - > $@
 
 openpose :
-	git clone https://github.com/CMU-Perceptual-Computing-Lab/openpose
+	git clone --branch v1.5.1 https://github.com/CMU-Perceptual-Computing-Lab/openpose
 	git -C $@ submodule update --init --recursive --remote
