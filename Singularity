@@ -57,3 +57,4 @@ make -j $(nproc)
 
 %environment
 export PATH=/opt/openpose/build/caffe/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PYTHONPATH=/opt/openpose/build/python/openpose:/opt/openpose/build/caffe/python
