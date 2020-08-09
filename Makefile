@@ -13,6 +13,7 @@ $(TARGET) : $(SOURCE) openpose kitware.gpg
 	$(TIME) sudo $(SINGULARITY) build $(BUILD_OPTS) $@ $< | tee $(BUILD_LOG)
 
 openpose.simg : $(SOURCE) openpose kitware.gpg
+	rm -f $@
 	$(TIME) sudo $(SINGULARITY) build $@ $< | tee $(BUILD_LOG)
 
 kitware.gpg :
