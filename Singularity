@@ -54,8 +54,6 @@ test -d build || {
 # Build.
 cd build
 make -j $(nproc)
-# make -j $(nproc) test
-# ctest
 
 %environment
 export PATH=/opt/openpose/build/caffe/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
