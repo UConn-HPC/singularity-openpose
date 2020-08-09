@@ -60,5 +60,5 @@ python3 -c 'import pyopenpose; print("pyopenpose:", dir(pyopenpose))'
 python3 -c 'from caffe.proto import caffe_pb2; print("caffe_pb2:", dir(caffe_pb2))'
 
 %environment
-export PATH=/opt/openpose/build/examples/calibration:/opt/openpose/build/examples/openpose:/opt/openpose/build/caffe/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+export PATH=/opt/openpose/build/examples/openpose:/opt/openpose/build/caffe/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PYTHONPATH=/opt/openpose/build/python/openpose:/opt/openpose/build/caffe/python
